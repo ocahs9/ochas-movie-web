@@ -1,0 +1,40 @@
+.main_slide{
+  position: absolute; /* 자식 요소의 위치를 상대적으로 설정하기 위해 사용 */
+}
+
+.slide_img{
+  position: relative ; /*abs로 바꾸면 새로고침하면 안뜸..*/
+  height: 100%;
+  width: 100%;  
+}
+
+.slide_card{
+  width: 100%; /* 이미지 너비 100%로 설정 */
+  display: block; /* 이미지가 부모 컨테이너의 너비를 따르도록 설정 */
+  
+}
+.slide_text{
+  position: absolute; /* 절대 위치 지정 */
+  top: 20px; /* 아래에서 20px만큼 떨어져 위치 */
+  left: 20px; /* 왼쪽에서 20px만큼 떨어져 위치 */
+  color: white; /* 텍스트 색상을 흰색으로 설정 (이미지 위에 표시되므로 가독성을 높이기 위해 밝은 색상을 사용) */
+  text-decoration: none;
+}
+
+.endl{
+  word-wrap: 'break-word';
+  white-space: 'pre-wrap';
+}
+
+.group_name{
+ 
+  margin-top: 0.625em;
+	font-size: 4.125em;
+	font-weight: bolder;
+	color: white;
+	text-shadow: 3px 3px #4e4e4e;
+	transition: all 0.4s ease;
+  
+	
+}
+

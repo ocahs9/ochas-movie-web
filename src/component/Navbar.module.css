@@ -1,0 +1,34 @@
+.container{
+  position: relative;
+  width: 100%;
+  height: 20px;
+  padding: 0px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(237,239,233);
+  z-index: 10;
+}
+
+.page_name{
+  position: relative;
+  top: 20%;
+  font-size: 20px;
+  text-shadow: 5px 5px #c7cdd4;
+}
+
+.group_name{
+  display: block;
+  position : relative;
+  align-content: center;
+  text-shadow: 5px 5px #c7cdd4;
+}
+
+.group_link{
+  display: relative;
+  margin-right: 50px;
+  float: left;
+  flex-direction: row;
+  align-content: center;
+  text-shadow: 5px 5px #c7cdd4;
+}
