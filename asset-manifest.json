@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ochas-movie-web/static/css/main.a0192715.css",
+    "main.css": "/ochas-movie-web/static/css/main.661f0398.css",
     "main.js": "/ochas-movie-web/static/js/main.0d8ae273.js",
     "index.html": "/ochas-movie-web/index.html",
-    "main.a0192715.css.map": "/ochas-movie-web/static/css/main.a0192715.css.map",
+    "main.661f0398.css.map": "/ochas-movie-web/static/css/main.661f0398.css.map",
     "main.0d8ae273.js.map": "/ochas-movie-web/static/js/main.0d8ae273.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0192715.css",
+    "static/css/main.661f0398.css",
     "static/js/main.0d8ae273.js"
   ]
 }
