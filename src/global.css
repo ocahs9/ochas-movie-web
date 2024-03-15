@@ -1,0 +1,100 @@
+/*그냥 특정 js에 전부 적용해버릴 코드*/
+* {
+  box-sizing: border-box; /*테두리까지 포함한 너비값 계산*/
+  margin: 0;
+  padding: 0;
+}
+
+
+/*
+  직접 타겟팅해서 하는 걸 아직 잘 모르겠으니, 그냥 전체 css로 적용시켜봄.
+  -> 그러니 swiper의 적당한 부분에 잘 적용이 됨 !
+
+  명확하게 어디에 넣어야 하는지 파악하기 -> 그래야 원하는 부분만 수정할 수 있음 
+*/
+
+.swiper{
+  --swiper-theme-color:#fff;
+  }
+
+  /*
+  애니메이션 정의 -> 위로 슥 올라가는 거
+*/
+@keyframes text-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* .swiper-slide는 Swiper 라이브러리가 생성한 슬라이드 요소들을 선택하는 css선택자 */
+/*따라서 아래의 경우, 해당 슬라이드 요소 안에 있는 span요소에 적용하겠다는 의미*/
+/*
+.swiper .swiper-slide span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 55%;
+  width: 30%;
+  opacity: 1;
+  transition: 0.5s;
+  z-index: 3;
+  margin: auto;
+  text-align: left;
+}
+
+.swiper .swiper-slide-active span {
+  animation-name: text-fade-in;
+  animation-duration: 0.7s;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+*/
+.swiper .swiper-pagination-bullet {
+  width: 20px;
+  height: 6px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  transition: 0.2s;
+  width: 60px;
+  background-color: #fff;
+}
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+  width: 70px;
+  height: 70px;
+  color: #414141; 
+  background-color: rgba(240, 240, 240, 0.2);
+  z-index: 2;
+  background-position: center;
+  border-radius: 50%;
+  transition: 0.4s;
+  font-weight: bold;
+}
+
+.swiper .swiper-button-next {
+  position: absolute;
+  right: 10px;
+}
+
+.swiper .swiper-button-prev {
+  position: absolute;
+  left: 10px;
+}
+
+.swiper .swiper-button-next:hover,
+.swiper .swiper-button-prev:hover {
+  transform: scale(1.1);
+  background-color: rgb(243, 243, 243);
+  text-shadow: 2px 2px rgb(200, 200, 200);
+  box-shadow: 0 4px 12px rgba(131, 131, 131, 0.7);
+}

@@ -8,13 +8,17 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import styles from "./Slide.module.css"
+
 
 function Slide({movies, group, name})
 {
   return (
-    <div>
-      <h3><Link to={`/page/${group}`}>{`${name}`}</Link></h3>
-      
+    <div className={styles.slide}>
+      <div>
+        <h3><Link to={`/page/${group}`}>{`${name}`}</Link></h3>
+      </div>
+
       <Swiper
       modules={[Navigation, Pagination, Autoplay]}
 			spaceBetween={0}

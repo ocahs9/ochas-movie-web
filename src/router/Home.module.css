@@ -6,11 +6,75 @@
   align-items: center;
 }
 
+.slide_card{
+  width: 100%;
+  background-color: blue;
+}
+
+/*위에 nav 넣을거라서*/
+
 .main_slide{
-  margin-top: 50px;
-  position: relative;
+  position:relative; 
+  margin-top: 50px; 
   display: flex;
   width: 100%;
-  height: 600px;
-  min-height: 600px;
+  height: calc(100vh-50px);
+  min-height: 550px;
+  background-color: red;
+  padding: 0px;
 }
+
+/*
+반응형 웹을 위해, 화면 크기에 따라 슬라이드 크기 조절
+*/
+
+@media screen and (max-width: 768px) { /* small 크기에 대한 미디어 쿼리 */
+  .main_slide {
+    min-height: 450px;
+    max-height: 500px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) { /* desktop 크기에 대한 미디어 쿼리 */
+  .main_slide {
+    font-size: 20px;
+    /*width: 80%;*/
+    height: calc(80vh - 50px);
+    min-height: 900px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main_slide {
+    font-size: 20px;
+    /*width: 80%;*/
+    height: calc(80vh - 50px);
+    min-height: 900px;
+  }
+}
+
+@media screen and (max-width: 2400px) {
+  .main_slide {
+    max-height: 900px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1490px) {
+  .main_slide {
+    font-size: 12px;
+    max-height: 700px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main_slide {
+    min-height: 450px;
+    max-height: 500px;
+    font-size: 10px;
+  }
+}
+
+
+

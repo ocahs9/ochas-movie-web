@@ -4,14 +4,12 @@ function Navbar()
 {
   return (
     <div className={styles.container}>
-      <div className={styles.page_name}>
-        <Link to={"/"}>Ochas Movie</Link>
-      </div>
+      <Link className={styles.page_name} to={"/"}>Ochas Movie</Link>
       <div className={styles.group_name}>
-        <span className={styles.group_link}><Link to={`/page/popular`}>Popular</Link></span>
-        <span className={styles.group_link}><Link to={`/page/now_playing`}>Now-Playing</Link></span>
-        <span className={styles.group_link}><Link to={`/page/top_rated`}>Top-Rated</Link></span>
-        <span className={styles.group_link}><Link to={`/page/up_comming`}>Upcoming</Link></span>
+        <Link className={styles.group_link} to={`/page/popular`}>Popular</Link>
+        <Link className={styles.group_link} to={`/page/now_playing`}>Now-Playing</Link>
+        <Link className={styles.group_link} to={`/page/top_rated`}>Top-Rated</Link>
+        <Link className={styles.group_link} to={`/page/up_comming`}>Upcoming</Link>
       </div>
     </div>
   );

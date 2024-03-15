@@ -1,40 +1,200 @@
-.main_slide{
-  position: absolute; /* 자식 요소의 위치를 상대적으로 설정하기 위해 사용 */
+
+.swiper{
+  position: relative; /* 자식 요소의 위치를 상대적으로 설정하기 위해 사용 */
+  /*height: calc(100vh-50px);
+  margin-top: 50px;*/
+  background-color: green; /*오류 감지용*/
+
 }
 
-.slide_img{
-  position: relative ; /*abs로 바꾸면 새로고침하면 안뜸..*/
+.link{
+  position: relative;
+  /*display: block; 이걸 설정하면 아무 사진 눌러도 클릭되는데 
+  일부 문자가 사라지는 에러 발생. 일단 보류*/
+  text-decoration: none;
+  width:100%;
   height: 100%;
-  width: 100%;  
 }
+
+.link:visited{
+  color: inherit;
+}
+
+
+
 
 .slide_card{
+  position: relative;
   width: 100%; /* 이미지 너비 100%로 설정 */
-  display: block; /* 이미지가 부모 컨테이너의 너비를 따르도록 설정 */
-  
+  height: 100%;
+
 }
-.slide_text{
-  position: absolute; /* 절대 위치 지정 */
-  top: 20px; /* 아래에서 20px만큼 떨어져 위치 */
-  left: 20px; /* 왼쪽에서 20px만큼 떨어져 위치 */
-  color: white; /* 텍스트 색상을 흰색으로 설정 (이미지 위에 표시되므로 가독성을 높이기 위해 밝은 색상을 사용) */
-  text-decoration: none;
+.slide_img{
+  /*position: relative ;*/ /*abs로 바꾸면 새로고침하면 안뜸..*/
+  /*여기서 이미지 크기를 조절하니까 잘 됨*/
+  /*이유는 아직 모르겠음 - 부모요소를 따라가게 만들면 에러 발생*/
+  height: calc(100vh - 50px); 
+  width: 100%;
+  margin-top: 50px;
+
 }
 
-.endl{
-  word-wrap: 'break-word';
-  white-space: 'pre-wrap';
+
+
+
+.slide_text{
+  height: 100%;
+  width: 100%;
+  position: absolute; /* 절대 위치 지정 */
+  top: 0px; /* 아래에서 0px만큼 떨어져 위치 */
+  left: 0px; /* 왼쪽에서 0px만큼 떨어져 위치 */
+  color: white; /* 텍스트 색상을 흰색으로 설정 (이미지 위에 표시되므로 가독성을 높이기 위해 밝은 색상을 사용) */  
+  background: linear-gradient(to right, rgba(0,0,0,0.5) 4vw, rgba(0, 0, 0, 0) 50%);
+  /*img에다가 그라데이션 적용하고 싶지만 안됨. img의 백그라운드는 img가 없을 때만 적용됨*/
 }
+
 
 .group_name{
- 
-  margin-top: 0.625em;
+  position: relative;
+  margin-top: 10vh;
+  margin-left: 5vw;
 	font-size: 4.125em;
 	font-weight: bolder;
 	color: white;
 	text-shadow: 3px 3px #4e4e4e;
 	transition: all 0.4s ease;
-  
-	
 }
+
+.group_name:hover{
+		transform: translateY(-3px);
+}
+
+.movie_name_link{
+  position: relative;
+  margin-top: 2vh;
+  margin-left: 7vw;
+  font-size: 2.3em;
+  color:aquamarine;
+  text-shadow: 3px 3px #4e4e4e;
+	transition: all 0.4s ease;
+}
+
+.movie_name_link:hover{
+  transform: translateY(-3px);
+}
+
+.endl{
+  width: 30vw;
+  height: 9vh;
+  
+
+  white-space: pre-wrap; /*연속된 공백이나 개행을 하나로 처리하지 않고, 전부 표현하도록 white space 를 normal에서 변경*/
+  overflow: hidden;
+  text-overflow: ellipsis; /*본인 너비를 넘을경우, ...으로 보이게 한다*/
+  display: -webkit-box;
+  word-wrap: break-word; /*텍스트 래핑 - 컨테이너의 너비를 초과하면 단어 단위로 다음줄로 분리,래핑*/
+  -webkit-line-clamp: 3; /*2줄 까지만 표현하고 넘치는 건 ...으로 표시*/
+  -webkit-box-orient:vertical;
+  line-height: 3vh;
+  /*webkit을 사용하는 건, 다음과 같은 과정을 거친다.
+    1. 단어 단위 개행을 허용해주기 위해 word-wrap: break-word; 설정
+    2. overflow: 칸을 넘치는 것은 가리기 설정
+    3. text-overflow 가 감지되면 ...으로 표현하도록 ellipsis 로 설정 
+    4. -webkit-line-clamp: 2 를 통해 , 2줄까지 넘는 걸 text-overflow라고 설정
+    (원래 text-overflow는 1줄에만 해당된다. 즉, 원래는 white-space: nowrap; 속성과 사용된다.
+    그래서 원래는 1줄을 넘을 때만 ...으로 표시되도록 하는데, webkit 및 여러가지 속성의 조합으로
+    특정한 개수의 줄을 넘어갈 때 ... 으로 표시하도록 바꿀 수 있었다. 
+    cf. 만약 텍스트 박스의 크기를 키우면, 그냥 가려진 것들이 전부 나오긴 하고 두번째 줄에 ...가 된다.)
+  */
+  
+  margin-top: 2vh;
+  margin-left: 7vw;
+  color:rgba(127, 255, 212,0.8);
+	transition: all 0.4s ease; /*애니메이션 동작 시간, 부드러움 정의*/
+  
+}
+
+/*
+  애니메이션 정의 -> 위로 슥 올라가는 거
+*/
+@keyframes text-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* .swiper-slide는 Swiper 라이브러리가 생성한 슬라이드 요소들을 선택하는 css선택자 */
+/*따라서 아래의 경우, 해당 슬라이드 요소 안에 있는 span요소에 적용하겠다는 의미*/
+/*
+.swiper .swiper-slide span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 55%;
+  width: 30%;
+  opacity: 1;
+  transition: 0.5s;
+  z-index: 3;
+  margin: auto;
+  text-align: left;
+}
+
+.swiper .swiper-slide-active span {
+  animation-name: text-fade-in;
+  animation-duration: 0.7s;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+*/
+.swiper .swiper-pagination-bullet {
+  width: 20px;
+  height: 6px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  transition: 0.2s;
+  width: 60px;
+  background-color: #fff;
+}
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+  width: 70px;
+  height: 70px;
+  color: #414141; 
+  background-color: rgba(240, 240, 240, 0.2);
+  z-index: 2;
+  background-position: center;
+  border-radius: 50%;
+  transition: 0.4s;
+  font-weight: bold;
+}
+
+.swiper .swiper-button-next {
+  position: absolute;
+  right: 10px;
+}
+
+.swiper .swiper-button-prev {
+  position: absolute;
+  left: 10px;
+}
+
+.swiper .swiper-button-next:hover,
+.swiper .swiper-button-prev:hover {
+  transform: scale(1.1);
+  background-color: rgb(243, 243, 243);
+  text-shadow: 2px 2px rgb(200, 200, 200);
+  box-shadow: 0 4px 12px rgba(131, 131, 131, 0.7);
+}
+
+
 
